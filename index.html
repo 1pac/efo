@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>fem</title>
+<title>efo</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <link href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
 <!-- CoreFrame -->
@@ -9,52 +12,135 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js"></script>
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 <!-- SyntaxHighlighter -->
 <script src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js" type="text/javascript"></script>
 <script src="http://alexgorbatchev.com/pub/sh/current/scripts/shAutoloader.js" type="text/javascript"></script>
 
+<script type="text/javascript" src="./js/efo.js"></script>
+<script type="text/javascript">
+new Efo({el:$('form').get(0)});
+</script>
 </head>
 <body>
 
-<pre class="brush: c-sharp;"> Hello World </pre>
+<style>
+body {
+padding-top: 70px;
+padding-bottom: 30px;
+}
 
-<div>
-<input type="text" class="" data-efokey="textArea1" data-efofuncs="isInput">
+</style>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+<div class="container">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+<a class="navbar-brand" href="#">EFO</a>
+</div>
+<div id="navbar" class="navbar-collapse collapse">
+<ul class="nav navbar-nav">
+<li class="active"><a href="#">Home</a></li>
+</ul>
+</li>
+</ul>
+</div><!--/.nav-collapse -->
+</div>
+</nav>
+
+<div class="container">
+<form class="form-horizontal">
+
+<div class="form-group">
+<label class="control-label col-xs-2">input <span class="label label-danger">must</span></label>
+<div class="col-xs-10">
+<input type="text" name="name" class="form-control">
+</div>
 </div>
 
-<div>
-<input type="checkbox" value="1" data-efokey="checkbox1" data-efofuncs="isInput"><label>あ</label>
-<input type="checkbox" value="2" data-efokey="checkbox1"><label>い</label>
-<input type="checkbox" value="3" data-efokey="checkbox1"><label>う</label>
+<div class="form-group">
+<label class="control-label col-xs-2">password <span class="label label-danger">must</span></label>
+<div class="col-xs-10">
+<input type="password" name="password" class="form-control">
+</div>
 </div>
 
-
-<div>
-<label for="radio1">
-<input type="radio" name="radio1" id="radio1" value="1" data-efokey="radio1" data-efofuncs="isInput">
-あ
-</label>
-
-<label for="radio2">
-<input type="radio" name="radio1" id="radio2" value="2" data-efokey="radio1">
-い
-</label>
-
-<label for="radio3">
-<input type="radio" name="radio1" id="radio3" value="2" data-efokey="radio1">
-う
-</label>
+<div class="form-group">
+<label class="control-label col-xs-2">textarea <span class="label label-danger">must</span></label>
+<div class="col-xs-10">
+<textarea class="form-control" rows="3"></textarea>
+</div>
 </div>
 
-<div>
-<select class="g_selectStyle01ip" data-efokey="pulldown1" data-efofuncs="isInput">
-<option value="">- お選びください -</option>
-<option value="あ">あ</option>
-<option value="い">い</option>
-<option value="う">う</option>
-<option value="え">え</option>
-<option value="お">お</option>
+<div class="form-group">
+<label class="control-label col-xs-2">checkbox <span class="label label-danger">must</span></label>
+<div class="col-xs-10">
+<label class="checkbox-inline">
+<input type="checkbox" id="inlineCheckbox1" value="option1"> 1
+</label>
+<label class="checkbox-inline">
+<input type="checkbox" id="inlineCheckbox2" value="option2"> 2
+</label>
+<label class="checkbox-inline">
+<input type="checkbox" id="inlineCheckbox3" value="option3"> 3
+</label>
+</div>
+</div>
+
+<div class="form-group">
+<label class="control-label col-xs-2">radiobutton <span class="label label-danger">must</span></label>
+<div class="col-xs-10">
+<label class="radio-inline">
+<input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 1
+</label>
+<label class="radio-inline">
+<input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 2
+</label>
+<label class="radio-inline">
+<input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> 3
+</label>
+</div>
+</div>
+
+<div class="form-group">
+<label class="control-label col-xs-2">select <span class="label label-danger">must</span></label>
+<div class="col-xs-10">
+<select class="form-control">
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5</option>
 </select>
 </div>
+</div>
+
+
+<div class="form-group">
+<label class="control-label col-xs-2">confirm <span class="label label-danger">must</span></label>
+<div class="col-xs-10">
+<div class="checkbox">
+<label>
+<input type="checkbox">remember
+</label>
+</div>
+</div>
+</div>
+
+<div class="form-group">
+<div class="col-xs-offset-2 col-xs-10">
+<button type="submit" class="btn btn-default">Submit</button>
+</div>
+</div>
+
+</form>
+</div>
+
+
 </body>
 </html>
